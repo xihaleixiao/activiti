@@ -20,6 +20,7 @@
         <activiti.engine.version>7-201802-EA</activiti.engine.version>
         <flyway.version>5.2.4</flyway.version>
         <flyway-maven-plugin.version>5.2.4</flyway-maven-plugin.version>
+        <spring.security.oauth2.version>2.3.4.RELEASE</spring.security.oauth2.version>
     </properties>
 
     <dependencies>
@@ -35,7 +36,18 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security.oauth</groupId>
+            <artifactId>spring-security-oauth2</artifactId>
+            <version>${spring.security.oauth2.version}</version>
         </dependency>
 
         <dependency>

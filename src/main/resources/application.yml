@@ -13,4 +13,3 @@ spring:
     baseline-on-migrate: true
 server:
   port: 8088
-
