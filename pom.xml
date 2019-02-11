@@ -18,12 +18,19 @@
         <java.version>1.8</java.version>
         <mysql.version>5.1.47</mysql.version>
         <activiti.engine.version>7-201802-EA</activiti.engine.version>
+        <flyway.version>5.2.4</flyway.version>
+        <flyway-maven-plugin.version>5.2.4</flyway-maven-plugin.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
         <dependency>
@@ -48,6 +55,12 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>${flyway.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -55,6 +68,17 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>${flyway-maven-plugin.version}</version>
+                <configuration>
+                    <user>root</user>
+                    <password>11111</password>
+                    <driver>com.mysql.jdbc.Driver</driver>
+                    <url>jdbc:mysql://localhost:3306/activiti</url>
+                </configuration>
             </plugin>
         </plugins>
     </build>
